@@ -1,20 +1,351 @@
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+html, body {
+    min-height: 100vh;
+}
+
 body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #0f172a;
+    background: #f8fafc;
+}
+
+.siteHeader {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.pageContent {
+    flex: 1;
+}
+
+.navBar,
+.bottomHeader {
+    background: #fff;
+    width: 100%;
+}
+
+.navBar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1440px;
+    height: 86px;
+    padding: 20px 130px 0;
+    margin: 0 auto;
+    border-bottom: 1px solid #ddd;
+}
+
+.logo {
+    width: 150px;
+}
+
+.logo img {
+    width: 150px;
+    height: 46px;
+    display: block;
+}
+
+.searchBar {
+    display: flex;
+    width: 665px;
+    height: 40px;
+    margin: 0 40px; /* more horizontal space between logo/search and profile icons */
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.searchBar input {
+    flex: 1;
+    padding: 0 16px;
+    border: none;
+    outline: none;
+    height: 100%;
+}
+
+.searchBar select {
+    width: 150px;
+    border: none;
+    border-left: 1px solid #ddd;
+    padding: 0 12px;
+    background: transparent;
+    height: 100%;
     color: #333;
 }
 
-h1 {
-    color: #2c3e50;
-    margin: 20px 0;
+.searchBar button {
+    width: 100px;
+    border: none;
+    background: #0D6EFD;
+    color: white;
+    cursor: pointer;
+    height: 100%;
 }
 
-p {
-    color: #555;
+.headerIcons {
+    display: flex;
+    align-items: center;
+    gap: 12px; /* extra space between search and profile/action items */
 }
+
+.iconItem {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    cursor: pointer;
+    padding: 8px 6px; /* extra padding for better touch spacing */
+}
+
+.iconItem i {
+    font-size: 18px;
+    color: #6b7280; /* keep header icons gray */
+}
+
+.iconItem span {
+    color: #6b7280;
+    font-size: 13px;
+    letter-spacing: 0.02em;
+}
+
+.bottomHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 15px 130px;
+    border-bottom: 1px solid #ddd;
+}
+
+.navLeft {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.navRight {
+    display: flex;
+    gap: 20px;
+}
+
+.bottomHeader select {
+    border: none;
+    background-size: 8px 5px;
+    padding: 0 24px 0 0;
+    color: #333;
+    font-size: 14px;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    cursor: pointer;
+}
+
+.bottomHeader select::-ms-expand {
+    display: none;
+}
+
+.menuItem {
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.menuItem.help {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.menuItem.help i {
+    font-size: 10px;
+    color: #6c757d;
+}
+
+.siteFooter {
+    background: #f8fafc;
+    padding: 40px 130px 20px;
+}
+
+.footerTop {
+    display: grid;
+    grid-template-columns: 1.5fr repeat(4, 1fr) 1.1fr;
+    gap: 40px;
+    align-items: start;
+    max-width: 1440px;
+    margin: 0 auto;
+    padding-bottom: 40px;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.footerBrand {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.footerLogo {
+    width: 150px;
+}
+
+.footerLogo img {
+    width: 150px;
+    height: 46px;
+    display: block;
+}
+
+.footerLogo span {
+    font-size: 28px;
+    font-weight: 700;
+    color: #4f46e5;
+}
+
+.footerBrand p,
+.footerColumn h4,
+.footerApps h4,
+.footerColumn a,
+.footerBottom,
+.footerLanguage {
+    font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.footerBrand p,
+.footerColumn a,
+.footerBottom,
+.footerLanguage {
+    font-weight: 300;
+}
+
+.footerColumn h4,
+.footerApps h4 {
+    font-weight: 600;
+}
+
+.footerColumn a {
+    color: #64748b;
+}
+
+.footerBrand p {
+    color: #475569;
+    line-height: 1.8;
+    max-width: 320px;
+}
+
+.socialIcons {
+    display: flex;
+    gap: 12px;
+}
+
+.socialIcons a {
+    width: 40px;
+    height: 40px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: #e2e8f0; /* gray background to match header icon styling */
+    color: #6b7280; /* gray icon color for consistent look */
+    text-decoration: none;
+}
+
+.socialIcons a:hover {
+    background: #cbd5e1;
+}
+.footerColumn,
+.footerApps {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.footerColumn h4,
+.footerApps h4 {
+    font-size: 16px;
+    font-weight: 400;
+    color: #111827;
+}
+
+.footerColumn a {
+    color: #64748b;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.footerColumn a:hover {
+    color: #111827;
+}
+
+.appButton {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 18px;
+    border-radius: 12px;
+    text-decoration: none;
+    color: #fff;
+    font-weight: 600;
+}
+
+.appButton small {
+    display: block;
+    font-size: 9px;
+    opacity: 0.8;
+    text-transform: uppercase;
+}
+
+.appStore,
+.googlePlay {
+    background: #000;
+    display: inline-flex;
+}
+
+.appButton i {
+    font-size: 24px;
+}
+
+.footerBottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 20px 0 0;
+    color: #64748b;
+    font-size: 14px;
+}
+
+.footerLanguage {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 600;
+    color: #0f172a;
+}
+
+.footerLanguage .flag {
+    font-size: 20px;
+}
+
+.footerLanguage i {
+    color: #0f172a;
+    font-size: 10px;
+}
+
+
+
+
